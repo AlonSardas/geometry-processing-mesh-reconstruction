@@ -1,5 +1,6 @@
 add_executable(run_tests
   test_fd_interpolate.cpp
+  test_partial_derivative.cpp
 )
 
 target_link_libraries(run_tests

@@ -17,12 +17,7 @@
 //     m = nx*(ny-1)*nz  if dir = 1
 //     m = nx*ny*(nz-1)  otherwise (if dir = 2)
 //
-// See also: fd_partial_derivative.h
-void fd_partial_derivative(
-  const int nx,
-  const int ny,
-  const int nz,
-  const double h,
-  const int dir,
-  Eigen::SparseMatrix<double> & D);
+void fd_partial_derivative(const int nx, const int ny, const int nz,
+                           const double h, const int dir,
+                           Eigen::SparseMatrix<double> &D);
 #endif

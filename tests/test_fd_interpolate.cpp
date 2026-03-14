@@ -82,10 +82,10 @@ TEST(InterpolateTest, TestTwoPoints) {
     }
   }
 
-  Eigen::MatrixXd expected = W * X;
-  for (int i = 0; i < expected.rows(); ++i) {
-    for (int j = 0; j < expected.cols(); ++j) {
-      EXPECT_NEAR(P(i, j), expected(i, j), 1e-6)
+  Eigen::MatrixXd results = W * X;
+  for (int i = 0; i < results.rows(); ++i) {
+    for (int j = 0; j < results.cols(); ++j) {
+      EXPECT_NEAR(P(i, j), results(i, j), 1e-6)
           << "Mismatch at (" << i << "," << j << ")";
     }
   }
