@@ -16,8 +16,20 @@ else()
   file(GLOB SRCFILES src/*.cpp)
 endif()
 
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+  DOWNLOAD_EXTRACT_TIMESTAMP true
+)
+FetchContent_MakeAvailable(googletest)
+
 add_library(core ${SRCFILES})
 target_link_libraries(core igl::core igl::glfw )
 
 add_executable(mesh-reconstruction "main.cpp")
 target_link_libraries(mesh-reconstruction core igl::core igl::opengl igl::glfw )
+
+# Enable testing
+enable_testing()
+add_subdirectory(tests)
