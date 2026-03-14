@@ -21,8 +21,8 @@ void fd_partial_derivative(const int nx, const int ny, const int nz,
         unsigned int index0 = get_1D_index(i, j, k, nx, ny, nz);
         D.insert(target_index, index0) = -1.0 / h;
         unsigned int index1 =
-            get_1D_index(i + dir_indicator[0], j + dir_indicator[1],
-                         k + dir_indicator[2], nx, ny, nz);
+            get_1D_index(i + dir_indicator[X_DIR], j + dir_indicator[Y_DIR],
+                         k + dir_indicator[Z_DIR], nx, ny, nz);
         D.insert(target_index, index1) = 1.0 / h;
       }
     }
